@@ -1,0 +1,28 @@
+{
+  "name": "puhelinluettelo_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxmijuholx/puhelinluettelo_backend.git"
+  },
+  "author": "Jami Juhola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jxmijuholx/puhelinluettelo_backend/issues"
+  },
+  "homepage": "https://github.com/jxmijuholx/puhelinluettelo_backend#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
