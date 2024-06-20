@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const cors = require('cors')
+
+app.use(cors())
 
 app.use(express.json());
 
@@ -41,11 +44,8 @@ let persons = [
 console.log('Middleware activated');
 
 app.get('/api/persons', (request, response) => {
-    if(persons) {
-        response.json(persons);
-    }else{
-        response.status(404).end();
-    }
+    response.json(persons);
+    console.log('GET', persons);
 });
 
 app.get('/info', (request, response) => {
@@ -102,7 +102,7 @@ app.post('/api/persons', (request, response) => {
     console.log('onnistuit lisäämään tyypin');
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

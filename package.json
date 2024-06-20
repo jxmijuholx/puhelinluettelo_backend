@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/jxmijuholx/puhelinluettelo_backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7",
     "nodemon": "^3.1.3"
   }
 }
