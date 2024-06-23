@@ -14,10 +14,26 @@ mongoose.connect(url)
         console.log('Virhe mongoon yhistämisessä:', error.message)
     })
 
-const personSchema = new mongoose.Schema({
-        name: String,
-        number: String
-})
+    const phonenumberValidator = (number) => {
+        return /^\d{2,3}-\d{5,}$/.test(number);
+    };
+
+    const personSchema = new mongoose.Schema({
+        name: {
+            type: String,
+            required: [true, 'Name is required'],
+            minlength: [3, 'Name must be at least 3 characters long']
+        },
+        number: {
+            type: String,
+            required: [true, 'Number is required'],
+            minlength: [8, 'Number must be at least 8 characters long'],
+            validate: {
+                validator: phonenumberValidator,
+                message: props => `${props.value} is not a valid phone number! It should be in the format XX-XXXXX or XXX-XXXXX`
+            }
+        }
+    });
 
 personSchema.set('toJSON', {
     transform: (document, returnedObject) => {
