@@ -32,7 +32,11 @@ if(process.argv.length === 3){
     })
 }else{
     const person = new Person({
-        name: name,
+        name: {
+            type: String,
+            minlength: 3,
+            required: true
+          },
         number: number,
     });
 
