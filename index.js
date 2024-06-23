@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const app = express();
 const Person = require('./src/models/Person');
 
-app.use(express.static('dist'));
+app.use(express.static('dist'))
 
 const requestLogger = (request, response, next) => {
     console.log('Method:', request.method)
